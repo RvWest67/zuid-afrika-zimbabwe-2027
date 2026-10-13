@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Begroting · Kruger & Victoria Falls planner</title><meta name="description" content="Generieke Nederlandstalige reisplanner voor Kruger, Panorama Route en Victoria Falls (juni–september).">
+<meta name="theme-color" content="#3d2b14"><link rel="icon" href="icon.svg"><style>
+:root{--bg:#fffdf7;--ink:#2b2b2b;--accent:#b5651d;--bar:#3d2b14;--poppy:#e8590c}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--bar);color:#fff;padding:calc(22px + env(safe-area-inset-top)) 18px 26px;text-align:center;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,#6b5a3e 0 14px,#3b3222 14px 18px)}
+.poppy{width:64px;height:64px;display:block;margin:0 auto 8px}
+h1{margin:0;font-size:25px;line-height:1.15;letter-spacing:.01em}
+h1 span{color:#ffb4a8}
+.sub{margin:6px 0 0;font-size:14.5px;opacity:.88}
+main{max-width:560px;margin:0 auto;padding:18px 14px 8px}
+.intro{font-size:14.5px;line-height:1.5;margin:0 2px 16px;color:#444}
+.card{display:flex;gap:14px;align-items:center;text-decoration:none;color:inherit;background:#fff;border:1.5px solid #e4d9c6;border-left:6px solid var(--accent);border-radius:14px;padding:16px 14px;margin:0 0 14px;box-shadow:0 2px 8px rgba(59,50,34,.10);min-height:92px;transition:transform .12s,box-shadow .12s}
+a.card:active{transform:scale(.985)}
+a.card:hover{box-shadow:0 4px 14px rgba(59,50,34,.2)}
+a.card:focus-visible{outline:3px solid var(--poppy);outline-offset:2px}
+.card .ic{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;background:#f3e6d6}
+.card.sim{border-left-color:var(--poppy)} .card.sim .ic{background:#fde4e1}
+.card.tl{border-left-color:#7048e8} .card.tl .ic{background:#ece5fd}
+.card.vh{border-left-color:#2b8a3e} .card.vh .ic{background:#e3f4e6}
+.card.bg{border-left-color:#1c7ed6} .card.bg .ic{background:#e7f1fb}
+.card.rt{border-left-color:#2f9e44} .card.rt .ic{background:#d3f9d8}
+.card.pk{border-left-color:#f08c00} .card.pk .ic{background:#fff4e6}
+.card.prog{border-left-color:#1c7ed6} .card.prog .ic{background:#e7f5ff}
+.card h2{margin:0 0 4px;font-size:18px;color:var(--bar)}
+.card p{margin:0;font-size:13.5px;line-height:1.4;color:#555}
+.card .go{margin-left:auto;font-size:22px;color:var(--accent);flex:0 0 auto}
+.card.soon{opacity:.55;border-left-color:#aaa;box-shadow:none;background:#f5f2ec;cursor:default}
+.card.soon .ic{background:#e6e2da;filter:grayscale(1)}
+.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:#ddd;color:#555;border-radius:8px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+blockquote{margin:6px 4px 14px;padding:10px 14px;border-left:3px solid var(--poppy);background:#fbf5ee;font-style:italic;font-size:13.5px;line-height:1.45;color:#4a3f2c}
+blockquote cite{display:block;font-style:normal;font-size:11.5px;color:#777;margin-top:4px}
+.offl{margin:4px 0 14px;background:#fff;border:1px solid #e4d9c6;border-left:5px solid #495057;border-radius:12px;padding:11px 14px;font-size:14px;line-height:1.5}
+.offl h2{margin:0 0 4px;font-size:17px;color:var(--bar)}
+.offl p{margin:5px 0}
+.obtn{display:inline-block;background:var(--bar);color:#fff;border:0;border-radius:18px;padding:9px 15px;font-size:14px;font-weight:700;cursor:pointer;margin:4px 0}
+.obtn:disabled{opacity:.6;cursor:default}
+#offstat{font-size:13px;color:#2b8a3e;font-weight:600;min-height:1.2em}
+#offstat.err{color:#a51111}
+.otip{font-size:13px;background:#fff9db;border-radius:9px;padding:7px 10px}
+.offl details{margin-top:8px;border-top:1px solid #eee;padding-top:6px}
+.offl summary{font-weight:700;cursor:pointer;color:var(--bar)}
+.offl ol{margin:4px 0;padding-left:20px;font-size:13.5px}
+.offl h3{font-size:14px;margin:8px 0 2px}
+.card.wjd{border-left-color:#e67700} .card.wjd .ic{background:#fff0db}
+.share{margin:4px 0 14px;background:#fff;border:1px solid #e4d9c6;border-left:5px solid #e67700;border-radius:12px;padding:11px 14px;font-size:14px;line-height:1.5}
+.share h2{margin:0 0 6px;font-size:17px;color:var(--bar)}
+.shrow{display:flex;gap:14px;align-items:center}
+.qrb{flex:0 0 auto;border:0;padding:6px;background:#fff;border-radius:10px;box-shadow:0 1px 5px rgba(59,50,34,.18);cursor:zoom-in;line-height:0}
+.qrb img{width:112px;height:112px;display:block;image-rendering:pixelated}
+.shtx p{margin:0 0 6px;font-size:13.5px;color:#555}
+.url{font-size:12.5px;word-break:break-all;color:var(--accent);font-weight:600}
+#shstat{font-size:13px;color:#2b8a3e;font-weight:600;min-height:1.2em}
+#shstat.err{color:#a51111}
+#qrov{position:fixed;inset:0;z-index:100;background:rgba(30,24,15,.85);display:none;align-items:center;justify-content:center;flex-direction:column;padding:18px;cursor:zoom-out}
+#qrov.show{display:flex}
+#qrov img{width:min(86vw,72vh,520px);height:auto;background:#fff;padding:14px;border-radius:14px;image-rendering:pixelated}
+#qrov p{color:#fff;font-size:15px;text-align:center;margin:12px 0 0}
+footer{max-width:560px;margin:0 auto;padding:6px 16px calc(22px + env(safe-area-inset-bottom));font-size:12px;color:#6b6b6b;line-height:1.5;text-align:center}
+footer a{color:var(--accent)}
+@media(min-width:700px){h1{font-size:30px}header{padding-top:34px;padding-bottom:34px}}
+@media (prefers-reduced-motion: reduce){.card{transition:none}}
+
+.page h2{font-size:19px;color:var(--bar);margin:22px 0 8px;border-bottom:2px solid #f0e2cc;padding-bottom:4px}
+.page h3{font-size:16px;margin:14px 0 6px;color:var(--bar)}
+.page p,.page li{font-size:14.5px;line-height:1.55}
+.page ul{padding-left:20px}
+.box{background:#fff;border:1px solid #e4d9c6;border-left:5px solid var(--accent);border-radius:12px;padding:10px 14px;margin:10px 0}
+.box.warn{border-left-color:#f08c00;background:#fff9ed}.box.ok{border-left-color:#2b8a3e;background:#f1faf3}
+.src{font-size:11.5px;color:var(--accent);text-decoration:none;white-space:nowrap}
+.tw{overflow-x:auto;margin:8px 0}table{border-collapse:collapse;font-size:13px;min-width:100%}
+th,td{border:1px solid #e4d9c6;padding:6px 7px;text-align:left;vertical-align:top}th{background:#f6ecdc}
+.top{position:sticky;top:0;z-index:500;background:var(--bar);color:#fff;display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top)) 12px 10px}
+.top a{color:#fff;text-decoration:none;font-size:22px;line-height:1}.top b{font-size:16px}
+.day{display:flex;gap:10px;margin:6px 0;font-size:14px;line-height:1.45}.day .d{flex:0 0 64px;font-weight:700;color:var(--accent)}
+.ck label{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;line-height:1.45;margin:7px 0}.ck input{width:20px;height:20px;flex:0 0 20px;margin-top:1px}
+</style><!--pwa-->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Safari ZA·ZW 2027"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>#offtoast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));z-index:2000;max-width:min(92vw,520px);background:#212529;color:#fff;font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;border-radius:12px;padding:9px 34px 9px 12px;box-shadow:0 3px 12px rgba(0,0,0,.35)}#offtoast button{position:absolute;right:6px;top:5px;background:none;border:0;color:#fff;font-size:18px;cursor:pointer}</style>
+<script>
+(function(){
+  if('serviceWorker' in navigator && (location.protocol==='https:'||/^(localhost|127\.0\.0\.1)$/.test(location.hostname))) addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  function toast(on){ let t=document.getElementById('offtoast');
+    if(!on){ if(t) t.remove(); return; } if(t||!document.body) return;
+    t=document.createElement('div'); t.id='offtoast'; t.setAttribute('role','status');
+    t.innerHTML='📴 <b>Offline</b>: je bekijkt de bewaarde versie.'+(document.getElementById('map')||window.L?' Kaarttegels die je eerder bekeek, blijven zichtbaar; nieuwe gebieden hebben internet nodig.':'')+'<button type="button" aria-label="Sluiten">×</button>';
+    t.querySelector('button').onclick=()=>t.remove(); document.body.appendChild(t); }
+  addEventListener('offline',()=>toast(true)); addEventListener('online',()=>toast(false));
+  document.addEventListener('DOMContentLoaded',()=>{ if(navigator.onLine===false) toast(true); });
+})();
+</script>
+<!--/pwa--></head><body><div class="top"><a href="index.html" aria-label="Terug naar start">‹</a><b>💶 Begroting</b></div><main class="page">
+<p>Indicatieve begroting voor <b>2 personen</b> en de <a href="route.html">self-drive-voorstelroute</a> (21 dagen, 19 nachten). Wisselkoers: <b>€1 = R18.4945</b> (ECB-referentiekoers 12 okt 2026) <a class="src" href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-zar.en.html" target="_blank" rel="noopener">[ECB]</a>; <b>$1 = R16.5442</b> (13 okt 2026) <a class="src" href="https://www.ebnewsdaily.co.za/2026/10/13/rand-exchange-rate-today-2026-10-13/" target="_blank" rel="noopener">[bron]</a> → €1 ≈ $1.118. Laag/midden/hoog in euro, afgerond. ⚠️ schatting = geen harde bron.</p>
+<div class="tw"><table><tr><th>Post · bron</th><th>Laag</th><th>Mid</th><th>Hoog</th></tr><tr><td>✈️ Vluchten <b>AMS–JNB retour (2 p.)</b><div style="font-size:11.5px;color:#666;margin-top:3px">Typisch €690–1.051 p.p. retour, gem. €852 <a class="src" href="https://www.en.kayak.de/flight-routes/Amsterdam-Schiphol-AMS/Johannesburg-OR-Tambo-JNB" target="_blank" rel="noopener">[KAYAK]</a>; KLM direct sep 2027 US$1.197–1.264 p.p. <a class="src" href="https://deals.airhint.com/cheapest-deals/return/AMS/JNB/9" target="_blank" rel="noopener">[AirHint]</a> ⚠️ open-jaw (terug vanaf VFA) kan afwijken</div></td><td>€1380</td><td>€1704</td><td>€2261</td></tr><tr><td>✈️ Vluchten <b>MQP→VFA + VFA→JNB enkele reis (2 p.)</b><div style="font-size:11.5px;color:#666;margin-top:3px">Airlink vanaf R4.933 p.p. MQP→VFA <a class="src" href="https://www.flyairlink.com/en-za/flights-from-nelspruit-to-victoria-falls" target="_blank" rel="noopener">[bron]</a>; JNB↔VFA vanaf ±R3.056 p.p. <a class="src" href="https://za.edreams.com/flights/airline/4Z/airlink/JNB/johannesburg/VFA/victoria-falls/" target="_blank" rel="noopener">[bron]</a> ⚠️ 2026-vanafprijzen; mid/hoog = +30/70% ⚠️ schatting</div></td><td>€864</td><td>€1123</td><td>€1469</td></tr><tr><td>🚗 Auto <b>Huurauto compacte SUV, 15 dagen</b><div style="font-size:11.5px;color:#666;margin-top:3px">R700–1.200/dag excl. extra verzekering <a class="src" href="https://www.4x4carhire.net/4x4-car-hire-johannesburg-airport/" target="_blank" rel="noopener">[bron]</a> ⚠️; one-way-toeslag JNB→MQP niet geverifieerd</div></td><td>€568</td><td>€770</td><td>€973</td></tr><tr><td>🚗 Auto <b>Brandstof ±2.000–3.000 km</b><div style="font-size:11.5px;color:#666;margin-top:3px">95 octaan R30,25/l (inland, okt 2026) <a class="src" href="https://www.moneyweb.co.za/news/south-africa/more-panic-buying-looms-as-record-fuel-prices-set-to-kick-in/" target="_blank" rel="noopener">[bron]</a>; route ±900 km (OSRM) + game drives; 8–10 l/100 km ⚠️ schatting</div></td><td>€262</td><td>€368</td><td>€491</td></tr><tr><td>🛏️ Slapen <b>JNB vliegveld 1 nacht</b><div style="font-size:11.5px;color:#666;margin-top:3px">⚠️ schatting (richtlijn €90–150)</div></td><td>€80</td><td>€115</td><td>€150</td></tr><tr><td>🛏️ Slapen <b>Graskop B&amp;B 3 nachten</b><div style="font-size:11.5px;color:#666;margin-top:3px">R1.820–2.600 per kamer B&amp;B (2026) <a class="src" href="https://ultrabookings.net/listing/abbots-room/" target="_blank" rel="noopener">[bron]</a> <a class="src" href="https://www.holidaystays.co.za/hotel/panorama-boutique-guest-house-accommodation" target="_blank" rel="noopener">[bron]</a></div></td><td>€295</td><td>€397</td><td>€422</td></tr><tr><td>🛏️ Slapen <b>Hoedspruit guesthouse 2 nachten</b><div style="font-size:11.5px;color:#666;margin-top:3px">⚠️ schatting – geen geverifieerde prijs gevonden</div></td><td>€180</td><td>€240</td><td>€300</td></tr><tr><td>🛏️ Slapen <b>Kruger rest camps 7 nachten</b><div style="font-size:11.5px;color:#666;margin-top:3px">Bungalow/tent R1.958–2.397 voor 2 + 1% community fund <a class="src" href="https://castawaychris.com/kruger-national-park-accommodation-prices/" target="_blank" rel="noopener">[bron]</a> <a class="src" href="https://www.krugerpark.co.za/Kruger_National_Park_Lodging_&_Camping_Guide-travel/pricing_lower-sabie-camp.html" target="_blank" rel="noopener">[bron]</a> ⚠️ 2027-tarieven deels nog niet gepubliceerd</div></td><td>€748</td><td>€822</td><td>€916</td></tr><tr><td>🛏️ Slapen <b>Lodge Marloth Park/Hazyview 2 nachten</b><div style="font-size:11.5px;color:#666;margin-top:3px">Laag: Grand Kruger B&amp;B <a class="src" href="https://www.grandkrugerlodge.co.za/rooms/luxury-quad-bush-chalet/" target="_blank" rel="noopener">[bron]</a>; mid: Sanbonani spa-pakket <a class="src" href="https://bit.ly/FGSanbonani" target="_blank" rel="noopener">[bron]</a>; hoog: Royal Kruger 2-nachten-pakket 2027 incl. volpension, massage &amp; drive <a class="src" href="https://www.royalkrugerlodge.co.za/packages" target="_blank" rel="noopener">[bron]</a></div></td><td>€429</td><td>€472</td><td>€913</td></tr><tr><td>🛏️ Slapen <b>Victoria Falls 4 nachten (B&amp;B)</b><div style="font-size:11.5px;color:#666;margin-top:3px">US$80 (budgetlodge) tot ±US$120–250 middenklasse per tweepersoonskamer <a class="src" href="https://www.myvictoriafalls.com/room-rates.htm" target="_blank" rel="noopener">[bron]</a> <a class="src" href="https://www.thezimbabweguide.com/city/victoria-falls/where-to-stay/" target="_blank" rel="noopener">[bron]</a> ⚠️</div></td><td>€286</td><td>€537</td><td>€895</td></tr><tr><td>🦏 Parken <b>Kruger: Wild Card koppel (goedkoopste optie)</b><div style="font-size:11.5px;color:#666;margin-top:3px">R7.310 (1 nov 2025–31 okt 2026) <a class="src" href="https://www.sanparks.org/rewards/wild-card/types-pricing" target="_blank" rel="noopener">[SANParks]</a>; 2026/27-prijs nog niet gepubliceerd <a class="src" href="https://travelafrica.guide/guides/south-africa/sanparks-wild-card/" target="_blank" rel="noopener">[bron]</a> ⚠️ +10–20%</div></td><td>€395</td><td>€435</td><td>€474</td></tr><tr><td>🦏 Parken <b>Panorama-entrees (God’s Window + Bourke’s Luck, 2 p.)</b><div style="font-size:11.5px;color:#666;margin-top:3px">R84 + R179 p.p. vanaf 1 nov 2026 <a class="src" href="https://www.mpumalanga.com/files/files/MTPA_Tariffs_2026_v3.pdf" target="_blank" rel="noopener">[MTPA]</a>; overige stops ⚠️ schatting</div></td><td>€28</td><td>€38</td><td>€53</td></tr><tr><td>🦏 Parken <b>Victoria Falls Rainforest (2 p.)</b><div style="font-size:11.5px;color:#666;margin-top:3px">US$58 p.p. <a class="src" href="https://apta-africa.org/2026/03/10/updated-victoria-falls-entry-fees-for-zim-side/" target="_blank" rel="noopener">[bron]</a> ⚠️; hoog = 2 bezoeken</div></td><td>€104</td><td>€104</td><td>€208</td></tr><tr><td>🛂 Visum <b>KAZA UNIVISA (2 p.)</b><div style="font-size:11.5px;color:#666;margin-top:3px">US$50 p.p. <a class="src" href="https://www.zambiaimmigration.gov.zm/kaza-univisa/" target="_blank" rel="noopener">[bron]</a></div></td><td>€89</td><td>€89</td><td>€89</td></tr><tr><td>🐘 Activiteiten <b>Chobe-dagtrip (2 p.)</b><div style="font-size:11.5px;color:#666;margin-top:3px">US$150–300 + US$20 parkfee p.p. <a class="src" href="https://onedaysafari.com/en/chobe/" target="_blank" rel="noopener">[bron]</a> ⚠️</div></td><td>€304</td><td>€445</td><td>€573</td></tr><tr><td>🐘 Activiteiten <b>Vic Falls: cruise / heli / Devil’s Pool</b><div style="font-size:11.5px;color:#666;margin-top:3px">Heli+cruise US$213–244 + ±US$25–37 heffingen <a class="src" href="https://www.todo.africa/activities/13-minute-helicopter-flight-classic-sunset-cruise/" target="_blank" rel="noopener">[bron]</a> ⚠️; Devil’s Pool tot US$209 <a class="src" href="https://livingstoneisland.com/rates-and-info" target="_blank" rel="noopener">[bron]</a>; laag = alleen cruise ⚠️ schatting</div></td><td>€179</td><td>€503</td><td>€877</td></tr><tr><td>🐘 Activiteiten <b>SANParks sunset/morning drives</b><div style="font-size:11.5px;color:#666;margin-top:3px">±R450 p.p. per drive, walk R770 <a class="src" href="https://www.sapeople.com/cost-of-living/visiting-kruger-national-park-what-does-it-really-cost/" target="_blank" rel="noopener">[bron]</a> ⚠️</div></td><td>€97</td><td>€195</td><td>€278</td></tr><tr><td>🍽️ Overig <b>Eten &amp; drinken (zelf koken in camps, uit eten elders)</b><div style="font-size:11.5px;color:#666;margin-top:3px">€40/60/90 per dag voor 2 × 21 ⚠️ schatting; lodge-volpension deels inbegrepen</div></td><td>€840</td><td>€1260</td><td>€1890</td></tr><tr><td>🩺 Overig <b>Reisverzekering + vaccinaties/malariapillen</b><div style="font-size:11.5px;color:#666;margin-top:3px">⚠️ schatting – prijs GGD/verzekeraar opvragen</div></td><td>€150</td><td>€300</td><td>€500</td></tr><tr><td>🤝 Overig <b>Fooien (gidsen, lodge, cruise)</b><div style="font-size:11.5px;color:#666;margin-top:3px">⚠️ schatting</div></td><td>€100</td><td>€200</td><td>€350</td></tr>
+<tr><td>Subtotaal</td><td>€7378</td><td>€10117</td><td>€14082</td></tr>
+<tr><td>Buffer 10% ⚠️ schatting</td><td>€738</td><td>€1012</td><td>€1408</td></tr>
+<tr style="font-weight:700;background:#f6ecdc"><td>Totaal</td><td>€8116</td><td>€11129</td><td>€15490</td></tr></table></div>
+<h2>Kruger: conservation fee of Wild Card?</h2>
+<p>Met 7 nachten in het park + 1 dag game drive vanaf de lodge = 8 fee-dagen × 2 personen × R692 <a class="src" href="https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf" target="_blank" rel="noopener">[SANParks]</a> = <b>R11,072</b> ≈ €599. Een Wild Card voor een koppel kostte R7.310 ≈ €395 <a class="src" href="https://www.sanparks.org/rewards/wild-card/types-pricing" target="_blank" rel="noopener">[bron]</a> (2026/27-prijs ⚠️ nog niet bekend). Een koppel heeft bij R692/dag ±6 parkdagen nodig om quitte te spelen <a class="src" href="https://travelafrica.guide/guides/south-africa/sanparks-wild-card/" target="_blank" rel="noopener">[bron]</a>. <b>Conclusie: Wild Card is voordeliger</b>, ook bij een prijsverhoging tot ±40%. Let op: de kaart geldt 365 dagen vanaf aankoop.</p>
+<div class="box warn">Niet meegenomen: souvenirs, wasservice, extra autoverzekering, one-way-toeslag huurauto, bagagekosten, eventueel Zambia-bezoek (Livingstone). Prijzen veranderen; controleer elke bron vlak voor boeken.</div></main><footer>Generieke reisplanner, geen boekingssite. Prijzen en regels veranderen: controleer altijd de gelinkte bron. ⚠️ = onzeker / alleen secundaire bron. Laatst gecontroleerd: 13 okt 2026.<br><a href="index.html">Start</a> · <a href="https://github.com/RvWest67/zuid-afrika-zimbabwe-2027">broncode</a></footer></body></html>
