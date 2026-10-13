@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Activiteiten · Kruger & Victoria Falls planner</title><meta name="description" content="Generieke Nederlandstalige reisplanner voor Kruger, Panorama Route en Victoria Falls (juni–september).">
+<meta name="theme-color" content="#3d2b14"><link rel="icon" href="icon.svg"><style>
+:root{--bg:#fffdf7;--ink:#2b2b2b;--accent:#b5651d;--bar:#3d2b14;--poppy:#e8590c}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--bar);color:#fff;padding:calc(22px + env(safe-area-inset-top)) 18px 26px;text-align:center;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,#6b5a3e 0 14px,#3b3222 14px 18px)}
+.poppy{width:64px;height:64px;display:block;margin:0 auto 8px}
+h1{margin:0;font-size:25px;line-height:1.15;letter-spacing:.01em}
+h1 span{color:#ffb4a8}
+.sub{margin:6px 0 0;font-size:14.5px;opacity:.88}
+main{max-width:560px;margin:0 auto;padding:18px 14px 8px}
+.intro{font-size:14.5px;line-height:1.5;margin:0 2px 16px;color:#444}
+.card{display:flex;gap:14px;align-items:center;text-decoration:none;color:inherit;background:#fff;border:1.5px solid #e4d9c6;border-left:6px solid var(--accent);border-radius:14px;padding:16px 14px;margin:0 0 14px;box-shadow:0 2px 8px rgba(59,50,34,.10);min-height:92px;transition:transform .12s,box-shadow .12s}
+a.card:active{transform:scale(.985)}
+a.card:hover{box-shadow:0 4px 14px rgba(59,50,34,.2)}
+a.card:focus-visible{outline:3px solid var(--poppy);outline-offset:2px}
+.card .ic{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;background:#f3e6d6}
+.card.sim{border-left-color:var(--poppy)} .card.sim .ic{background:#fde4e1}
+.card.tl{border-left-color:#7048e8} .card.tl .ic{background:#ece5fd}
+.card.vh{border-left-color:#2b8a3e} .card.vh .ic{background:#e3f4e6}
+.card.bg{border-left-color:#1c7ed6} .card.bg .ic{background:#e7f1fb}
+.card.rt{border-left-color:#2f9e44} .card.rt .ic{background:#d3f9d8}
+.card.pk{border-left-color:#f08c00} .card.pk .ic{background:#fff4e6}
+.card.prog{border-left-color:#1c7ed6} .card.prog .ic{background:#e7f5ff}
+.card h2{margin:0 0 4px;font-size:18px;color:var(--bar)}
+.card p{margin:0;font-size:13.5px;line-height:1.4;color:#555}
+.card .go{margin-left:auto;font-size:22px;color:var(--accent);flex:0 0 auto}
+.card.soon{opacity:.55;border-left-color:#aaa;box-shadow:none;background:#f5f2ec;cursor:default}
+.card.soon .ic{background:#e6e2da;filter:grayscale(1)}
+.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:#ddd;color:#555;border-radius:8px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+blockquote{margin:6px 4px 14px;padding:10px 14px;border-left:3px solid var(--poppy);background:#fbf5ee;font-style:italic;font-size:13.5px;line-height:1.45;color:#4a3f2c}
+blockquote cite{display:block;font-style:normal;font-size:11.5px;color:#777;margin-top:4px}
+.offl{margin:4px 0 14px;background:#fff;border:1px solid #e4d9c6;border-left:5px solid #495057;border-radius:12px;padding:11px 14px;font-size:14px;line-height:1.5}
+.offl h2{margin:0 0 4px;font-size:17px;color:var(--bar)}
+.offl p{margin:5px 0}
+.obtn{display:inline-block;background:var(--bar);color:#fff;border:0;border-radius:18px;padding:9px 15px;font-size:14px;font-weight:700;cursor:pointer;margin:4px 0}
+.obtn:disabled{opacity:.6;cursor:default}
+#offstat{font-size:13px;color:#2b8a3e;font-weight:600;min-height:1.2em}
+#offstat.err{color:#a51111}
+.otip{font-size:13px;background:#fff9db;border-radius:9px;padding:7px 10px}
+.offl details{margin-top:8px;border-top:1px solid #eee;padding-top:6px}
+.offl summary{font-weight:700;cursor:pointer;color:var(--bar)}
+.offl ol{margin:4px 0;padding-left:20px;font-size:13.5px}
+.offl h3{font-size:14px;margin:8px 0 2px}
+.card.wjd{border-left-color:#e67700} .card.wjd .ic{background:#fff0db}
+.share{margin:4px 0 14px;background:#fff;border:1px solid #e4d9c6;border-left:5px solid #e67700;border-radius:12px;padding:11px 14px;font-size:14px;line-height:1.5}
+.share h2{margin:0 0 6px;font-size:17px;color:var(--bar)}
+.shrow{display:flex;gap:14px;align-items:center}
+.qrb{flex:0 0 auto;border:0;padding:6px;background:#fff;border-radius:10px;box-shadow:0 1px 5px rgba(59,50,34,.18);cursor:zoom-in;line-height:0}
+.qrb img{width:112px;height:112px;display:block;image-rendering:pixelated}
+.shtx p{margin:0 0 6px;font-size:13.5px;color:#555}
+.url{font-size:12.5px;word-break:break-all;color:var(--accent);font-weight:600}
+#shstat{font-size:13px;color:#2b8a3e;font-weight:600;min-height:1.2em}
+#shstat.err{color:#a51111}
+#qrov{position:fixed;inset:0;z-index:100;background:rgba(30,24,15,.85);display:none;align-items:center;justify-content:center;flex-direction:column;padding:18px;cursor:zoom-out}
+#qrov.show{display:flex}
+#qrov img{width:min(86vw,72vh,520px);height:auto;background:#fff;padding:14px;border-radius:14px;image-rendering:pixelated}
+#qrov p{color:#fff;font-size:15px;text-align:center;margin:12px 0 0}
+footer{max-width:560px;margin:0 auto;padding:6px 16px calc(22px + env(safe-area-inset-bottom));font-size:12px;color:#6b6b6b;line-height:1.5;text-align:center}
+footer a{color:var(--accent)}
+@media(min-width:700px){h1{font-size:30px}header{padding-top:34px;padding-bottom:34px}}
+@media (prefers-reduced-motion: reduce){.card{transition:none}}
+
+.page h2{font-size:19px;color:var(--bar);margin:22px 0 8px;border-bottom:2px solid #f0e2cc;padding-bottom:4px}
+.page h3{font-size:16px;margin:14px 0 6px;color:var(--bar)}
+.page p,.page li{font-size:14.5px;line-height:1.55}
+.page ul{padding-left:20px}
+.box{background:#fff;border:1px solid #e4d9c6;border-left:5px solid var(--accent);border-radius:12px;padding:10px 14px;margin:10px 0}
+.box.warn{border-left-color:#f08c00;background:#fff9ed}.box.ok{border-left-color:#2b8a3e;background:#f1faf3}
+.src{font-size:11.5px;color:var(--accent);text-decoration:none;white-space:nowrap}
+.tw{overflow-x:auto;margin:8px 0}table{border-collapse:collapse;font-size:13px;min-width:100%}
+th,td{border:1px solid #e4d9c6;padding:6px 7px;text-align:left;vertical-align:top}th{background:#f6ecdc}
+.top{position:sticky;top:0;z-index:500;background:var(--bar);color:#fff;display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top)) 12px 10px}
+.top a{color:#fff;text-decoration:none;font-size:22px;line-height:1}.top b{font-size:16px}
+.day{display:flex;gap:10px;margin:6px 0;font-size:14px;line-height:1.45}.day .d{flex:0 0 64px;font-weight:700;color:var(--accent)}
+.ck label{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;line-height:1.45;margin:7px 0}.ck input{width:20px;height:20px;flex:0 0 20px;margin-top:1px}
+</style><!--pwa-->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Safari ZA·ZW 2027"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>#offtoast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));z-index:2000;max-width:min(92vw,520px);background:#212529;color:#fff;font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;border-radius:12px;padding:9px 34px 9px 12px;box-shadow:0 3px 12px rgba(0,0,0,.35)}#offtoast button{position:absolute;right:6px;top:5px;background:none;border:0;color:#fff;font-size:18px;cursor:pointer}</style>
+<script>
+(function(){
+  if('serviceWorker' in navigator && (location.protocol==='https:'||/^(localhost|127\.0\.0\.1)$/.test(location.hostname))) addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  function toast(on){ let t=document.getElementById('offtoast');
+    if(!on){ if(t) t.remove(); return; } if(t||!document.body) return;
+    t=document.createElement('div'); t.id='offtoast'; t.setAttribute('role','status');
+    t.innerHTML='📴 <b>Offline</b>: je bekijkt de bewaarde versie.'+(document.getElementById('map')||window.L?' Kaarttegels die je eerder bekeek, blijven zichtbaar; nieuwe gebieden hebben internet nodig.':'')+'<button type="button" aria-label="Sluiten">×</button>';
+    t.querySelector('button').onclick=()=>t.remove(); document.body.appendChild(t); }
+  addEventListener('offline',()=>toast(true)); addEventListener('online',()=>toast(false));
+  document.addEventListener('DOMContentLoaded',()=>{ if(navigator.onLine===false) toast(true); });
+})();
+</script>
+<!--/pwa--></head><body><div class="top"><a href="index.html" aria-label="Terug naar start">‹</a><b>🐘 Activiteiten</b></div><main class="page">
+<h2>Kruger &amp; private reserves</h2>
+<ul><li><b>Game drives (SANParks):</b> ochtendrit ±3 uur, vertrekt vóór poortopening; sunset drive ±3 uur met spotlight terug in het donker <a class="src" href="https://www.sanparks.org/parks/kruger/what-to-do/activities/game-drives" target="_blank" rel="noopener">[SANParks]</a>. Indicatie ±R450 p.p. <a class="src" href="https://www.sapeople.com/cost-of-living/visiting-kruger-national-park-what-does-it-really-cost/" target="_blank" rel="noopener">[bron]</a> ⚠️.</li>
+<li><b>Zelf rijden</b> met eigen auto: het meest enkelvriendelijk, eigen tempo.</li>
+<li><b>Guided walks:</b> bij de meeste camps, max. 8 gasten, gewapende gidsen <a class="src" href="https://www.sanparks.org/parks/kruger/what-to-do/activities/guided-walks" target="_blank" rel="noopener">[SANParks]</a>; ochtendwandeling ±R770 p.p. <a class="src" href="https://www.sapeople.com/cost-of-living/visiting-kruger-national-park-what-does-it-really-cost/" target="_blank" rel="noopener">[bron]</a> ⚠️.<br>🦶 <i>Enkelnoot:</i> wandelingen gaan door ongelijk terrein, zand en droge rivierbeddingen, vaak 3–4 uur; vraag naar een korte/rustige variant of kies alleen drives. Stevige hoge schoenen.</li>
+<li><b>Private reserve:</b> meestal 2 drives per dag in open voertuig, off-road toegestaan, met ranger/tracker; wandeling vaak optioneel.</li></ul>
+<h2>Panorama Route (MTPA)</h2>
+<div class="tw"><table><tr><th>Stop</th><th>Entree internationaal (2026)</th></tr><tr><td>God’s Window</td><td>R81 (vanaf 1 nov 2026: R84)</td></tr><tr><td>Bourke’s Luck Potholes</td><td>R173 (vanaf 1 nov 2026: R179)</td></tr></table></div>
+<p>Bron: MTPA-tarieven <a class="src" href="https://www.mpumalanga.com/files/files/MTPA_Tariffs_2026_v3.pdf" target="_blank" rel="noopener">[MTPA]</a>. Andere stops: Three Rondavels, Lisbon &amp; Berlin Falls, Pinnacle Rock – ⚠️ tarieven niet apart geverifieerd. 🦶 Bij Bourke’s Luck en God’s Window zijn er trappen/hellingen; de dichtstbijzijnde uitzichten zijn kort lopen.</p>
+<h2>Victoria Falls (Zimbabwe)</h2>
+<ul><li><b>Regenwoudwandeling</b> (ZimParks): US$58 p.p. internationaal sinds 2026 (was US$50, nu incl. btw) <a class="src" href="https://apta-africa.org/2026/03/10/updated-victoria-falls-entry-fees-for-zim-side/" target="_blank" rel="noopener">[bron]</a> ⚠️ nieuwsbericht/branchevereniging. Vlak pad, ±16 uitkijkpunten ⚠️; bij spray glad.</li>
+<li><b>Helikopter ‘Flight of Angels’</b>: ±US$215 p.p. + heffingen (2026) <a class="src" href="https://www.info-vicfalls.com/activities-and-places-of-interest/victoria-falls-livingstone/helicopter-flights" target="_blank" rel="noopener">[bron]</a> ⚠️ – nul belasting voor de enkel.</li>
+<li><b>Sunset cruise op de Zambezi:</b> veel aanbieders; combi heli+cruise ±US$213–244 + heffingen ⚠️ secundaire bron.</li>
+<li><b>Devil’s Pool</b> (Zambia, Livingstone Island): 2026 US$149–209 p.p. afhankelijk van pakket/seizoen; zwemmen alleen als het water het toelaat <a class="src" href="https://livingstoneisland.com/rates-and-info" target="_blank" rel="noopener">[bron]</a>. Vereist Zambia-toegang (KAZA-visum handig). 🦶 Boot + klauteren over natte rotsen en zwemmen in stroming – <b>niet enkelvriendelijk</b>; het eiland-bezoek zonder zwemmen kan wel ⚠️.</li></ul>
+<h2>Chobe (Botswana) dagtrip</h2><p>Boottocht op de Chobe-rivier + game drive; tour ±US$150–300 p.p. plus parkentree (±US$20 bij touroperators; officieel 270 BWP particulier) <a class="src" href="https://onedaysafari.com/en/chobe/" target="_blank" rel="noopener">[bron]</a> ⚠️. KAZA-visum dekt dagtrips naar Botswana via Kazungula <a class="src" href="https://www.zambiaimmigration.gov.zm/kaza-univisa/" target="_blank" rel="noopener">[bron]</a>. Nederlanders hebben voor Botswana geen visum nodig ⚠️ <a class="src" href="https://www.nederlandwereldwijd.nl/reisadvies/zimbabwe" target="_blank" rel="noopener">[Ned. Wereldwijd]</a>.</p></main><footer>Generieke reisplanner, geen boekingssite. Prijzen en regels veranderen: controleer altijd de gelinkte bron. ⚠️ = onzeker / alleen secundaire bron. Laatst gecontroleerd: 13 okt 2026.<br><a href="index.html">Start</a> · <a href="https://github.com/RvWest67/zuid-afrika-zimbabwe-2027">broncode</a></footer></body></html>

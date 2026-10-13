@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Checklist & to-do · Kruger & Victoria Falls planner</title><meta name="description" content="Generieke Nederlandstalige reisplanner voor Kruger, Panorama Route en Victoria Falls (juni–september).">
+<meta name="theme-color" content="#3d2b14"><link rel="icon" href="icon.svg"><style>
+:root{--bg:#fffdf7;--ink:#2b2b2b;--accent:#b5651d;--bar:#3d2b14;--poppy:#e8590c}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--bar);color:#fff;padding:calc(22px + env(safe-area-inset-top)) 18px 26px;text-align:center;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,#6b5a3e 0 14px,#3b3222 14px 18px)}
+.poppy{width:64px;height:64px;display:block;margin:0 auto 8px}
+h1{margin:0;font-size:25px;line-height:1.15;letter-spacing:.01em}
+h1 span{color:#ffb4a8}
+.sub{margin:6px 0 0;font-size:14.5px;opacity:.88}
+main{max-width:560px;margin:0 auto;padding:18px 14px 8px}
+.intro{font-size:14.5px;line-height:1.5;margin:0 2px 16px;color:#444}
+.card{display:flex;gap:14px;align-items:center;text-decoration:none;color:inherit;background:#fff;border:1.5px solid #e4d9c6;border-left:6px solid var(--accent);border-radius:14px;padding:16px 14px;margin:0 0 14px;box-shadow:0 2px 8px rgba(59,50,34,.10);min-height:92px;transition:transform .12s,box-shadow .12s}
+a.card:active{transform:scale(.985)}
+a.card:hover{box-shadow:0 4px 14px rgba(59,50,34,.2)}
+a.card:focus-visible{outline:3px solid var(--poppy);outline-offset:2px}
+.card .ic{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;background:#f3e6d6}
+.card.sim{border-left-color:var(--poppy)} .card.sim .ic{background:#fde4e1}
+.card.tl{border-left-color:#7048e8} .card.tl .ic{background:#ece5fd}
+.card.vh{border-left-color:#2b8a3e} .card.vh .ic{background:#e3f4e6}
+.card.bg{border-left-color:#1c7ed6} .card.bg .ic{background:#e7f1fb}
+.card.rt{border-left-color:#2f9e44} .card.rt .ic{background:#d3f9d8}
+.card.pk{border-left-color:#f08c00} .card.pk .ic{background:#fff4e6}
+.card.prog{border-left-color:#1c7ed6} .card.prog .ic{background:#e7f5ff}
+.card h2{margin:0 0 4px;font-size:18px;color:var(--bar)}
+.card p{margin:0;font-size:13.5px;line-height:1.4;color:#555}
+.card .go{margin-left:auto;font-size:22px;color:var(--accent);flex:0 0 auto}
+.card.soon{opacity:.55;border-left-color:#aaa;box-shadow:none;background:#f5f2ec;cursor:default}
+.card.soon .ic{background:#e6e2da;filter:grayscale(1)}
+.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:#ddd;color:#555;border-radius:8px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+blockquote{margin:6px 4px 14px;padding:10px 14px;border-left:3px solid var(--poppy);background:#fbf5ee;font-style:italic;font-size:13.5px;line-height:1.45;color:#4a3f2c}
+blockquote cite{display:block;font-style:normal;font-size:11.5px;color:#777;margin-top:4px}
+.offl{margin:4px 0 14px;background:#fff;border:1px solid #e4d9c6;border-left:5px solid #495057;border-radius:12px;padding:11px 14px;font-size:14px;line-height:1.5}
+.offl h2{margin:0 0 4px;font-size:17px;color:var(--bar)}
+.offl p{margin:5px 0}
+.obtn{display:inline-block;background:var(--bar);color:#fff;border:0;border-radius:18px;padding:9px 15px;font-size:14px;font-weight:700;cursor:pointer;margin:4px 0}
+.obtn:disabled{opacity:.6;cursor:default}
+#offstat{font-size:13px;color:#2b8a3e;font-weight:600;min-height:1.2em}
+#offstat.err{color:#a51111}
+.otip{font-size:13px;background:#fff9db;border-radius:9px;padding:7px 10px}
+.offl details{margin-top:8px;border-top:1px solid #eee;padding-top:6px}
+.offl summary{font-weight:700;cursor:pointer;color:var(--bar)}
+.offl ol{margin:4px 0;padding-left:20px;font-size:13.5px}
+.offl h3{font-size:14px;margin:8px 0 2px}
+.card.wjd{border-left-color:#e67700} .card.wjd .ic{background:#fff0db}
+.share{margin:4px 0 14px;background:#fff;border:1px solid #e4d9c6;border-left:5px solid #e67700;border-radius:12px;padding:11px 14px;font-size:14px;line-height:1.5}
+.share h2{margin:0 0 6px;font-size:17px;color:var(--bar)}
+.shrow{display:flex;gap:14px;align-items:center}
+.qrb{flex:0 0 auto;border:0;padding:6px;background:#fff;border-radius:10px;box-shadow:0 1px 5px rgba(59,50,34,.18);cursor:zoom-in;line-height:0}
+.qrb img{width:112px;height:112px;display:block;image-rendering:pixelated}
+.shtx p{margin:0 0 6px;font-size:13.5px;color:#555}
+.url{font-size:12.5px;word-break:break-all;color:var(--accent);font-weight:600}
+#shstat{font-size:13px;color:#2b8a3e;font-weight:600;min-height:1.2em}
+#shstat.err{color:#a51111}
+#qrov{position:fixed;inset:0;z-index:100;background:rgba(30,24,15,.85);display:none;align-items:center;justify-content:center;flex-direction:column;padding:18px;cursor:zoom-out}
+#qrov.show{display:flex}
+#qrov img{width:min(86vw,72vh,520px);height:auto;background:#fff;padding:14px;border-radius:14px;image-rendering:pixelated}
+#qrov p{color:#fff;font-size:15px;text-align:center;margin:12px 0 0}
+footer{max-width:560px;margin:0 auto;padding:6px 16px calc(22px + env(safe-area-inset-bottom));font-size:12px;color:#6b6b6b;line-height:1.5;text-align:center}
+footer a{color:var(--accent)}
+@media(min-width:700px){h1{font-size:30px}header{padding-top:34px;padding-bottom:34px}}
+@media (prefers-reduced-motion: reduce){.card{transition:none}}
+
+.page h2{font-size:19px;color:var(--bar);margin:22px 0 8px;border-bottom:2px solid #f0e2cc;padding-bottom:4px}
+.page h3{font-size:16px;margin:14px 0 6px;color:var(--bar)}
+.page p,.page li{font-size:14.5px;line-height:1.55}
+.page ul{padding-left:20px}
+.box{background:#fff;border:1px solid #e4d9c6;border-left:5px solid var(--accent);border-radius:12px;padding:10px 14px;margin:10px 0}
+.box.warn{border-left-color:#f08c00;background:#fff9ed}.box.ok{border-left-color:#2b8a3e;background:#f1faf3}
+.src{font-size:11.5px;color:var(--accent);text-decoration:none;white-space:nowrap}
+.tw{overflow-x:auto;margin:8px 0}table{border-collapse:collapse;font-size:13px;min-width:100%}
+th,td{border:1px solid #e4d9c6;padding:6px 7px;text-align:left;vertical-align:top}th{background:#f6ecdc}
+.top{position:sticky;top:0;z-index:500;background:var(--bar);color:#fff;display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top)) 12px 10px}
+.top a{color:#fff;text-decoration:none;font-size:22px;line-height:1}.top b{font-size:16px}
+.day{display:flex;gap:10px;margin:6px 0;font-size:14px;line-height:1.45}.day .d{flex:0 0 64px;font-weight:700;color:var(--accent)}
+.ck label{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;line-height:1.45;margin:7px 0}.ck input{width:20px;height:20px;flex:0 0 20px;margin-top:1px}
+</style><!--pwa-->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Safari ZA·ZW 2027"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>#offtoast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));z-index:2000;max-width:min(92vw,520px);background:#212529;color:#fff;font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;border-radius:12px;padding:9px 34px 9px 12px;box-shadow:0 3px 12px rgba(0,0,0,.35)}#offtoast button{position:absolute;right:6px;top:5px;background:none;border:0;color:#fff;font-size:18px;cursor:pointer}</style>
+<script>
+(function(){
+  if('serviceWorker' in navigator && (location.protocol==='https:'||/^(localhost|127\.0\.0\.1)$/.test(location.hostname))) addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  function toast(on){ let t=document.getElementById('offtoast');
+    if(!on){ if(t) t.remove(); return; } if(t||!document.body) return;
+    t=document.createElement('div'); t.id='offtoast'; t.setAttribute('role','status');
+    t.innerHTML='📴 <b>Offline</b>: je bekijkt de bewaarde versie.'+(document.getElementById('map')||window.L?' Kaarttegels die je eerder bekeek, blijven zichtbaar; nieuwe gebieden hebben internet nodig.':'')+'<button type="button" aria-label="Sluiten">×</button>';
+    t.querySelector('button').onclick=()=>t.remove(); document.body.appendChild(t); }
+  addEventListener('offline',()=>toast(true)); addEventListener('online',()=>toast(false));
+  document.addEventListener('DOMContentLoaded',()=>{ if(navigator.onLine===false) toast(true); });
+})();
+</script>
+<!--/pwa--></head><body><div class="top"><a href="index.html" aria-label="Terug naar start">‹</a><b>✅ Checklist & to-do</b></div><main class="page"><p>Afvinken wordt alleen op dit toestel bewaard (localStorage).</p><div class="ck"><label><input type="checkbox" data-i="0"><span><b>Nu (okt 2026):</b> Kies reisperiode (advies: eind aug – half sep 2027).</span></label><label><input type="checkbox" data-i="1"><span><b>Nu:</b> Kies route A, B of C en self-drive vs. begeleid.</span></label><label><input type="checkbox" data-i="2"><span><b>Vanaf ±1 sep 2026 / 13 okt 2026:</b> SANParks: reserveringen openen 11 maanden vooruit, de 11e maand opent op de 1e werkdag van de maand; online 1 dag later. Voor aug 2027 opende online op 2 sep 2026, voor sep–okt 2027 op 14 okt 2026.</span></label><label><input type="checkbox" data-i="3"><span><b>Zo snel mogelijk:</b> Private lodge reserveren (beperkt aantal kamers) – vegan + kamer op begane grond vragen.</span></label><label><input type="checkbox" data-i="4"><span><b>6–9 mnd vooraf:</b> Intercontinentale vlucht AMS–JNB (en retour vanaf VFA via JNB).</span></label><label><input type="checkbox" data-i="5"><span><b>6 mnd vooraf:</b> Regionale vlucht MQP/SZK/HDS → VFA (Airlink) en huurauto.</span></label><label><input type="checkbox" data-i="6"><span><b>3–6 mnd:</b> Accommodatie Graskop, Hoedspruit, Victoria Falls; Devil’s Pool boeken (beperkte plekken ⚠️).</span></label><label><input type="checkbox" data-i="7"><span><b>2–3 mnd:</b> GGD-afspraak: malaria + vaccinaties.</span></label><label><input type="checkbox" data-i="8"><span><b>2 mnd:</b> Paspoort: ≥30 dagen geldig na terugkomst, 2+ lege pagina’s.</span></label><label><input type="checkbox" data-i="9"><span><b>1 mnd:</b> Overweeg Zimbabwe e-visa / KAZA; USD kleine biljetten regelen; reisverzekering checken.</span></label><label><input type="checkbox" data-i="10"><span><b>1 week:</b> ZRA-waterstand + Devil’s Pool status checken; reisadvies opnieuw lezen.</span></label><label><input type="checkbox" data-i="11"><span><b>Vertrek:</b> Laagjes kleding, muggenmiddel, verrekijker, hoofdlamp, enkelbrace.</span></label></div>
+<p>Bronnen boekingsvensters: <a class="src" href="https://www.sanparks.org/contact/faq/online-bookings" target="_blank" rel="noopener">[SANParks FAQ]</a> <a class="src" href="https://www.sanparks.org/travel/book/useful-information/booking-periods" target="_blank" rel="noopener">[SANParks booking periods]</a>. ⚠️ SANParks: “subject to change”.</p>
+<script>document.querySelectorAll('.ck input').forEach(c=>{const k='ck'+c.dataset.i;c.checked=localStorage[k]==='1';c.onchange=()=>localStorage[k]=c.checked?'1':'0'})</script></main><footer>Generieke reisplanner, geen boekingssite. Prijzen en regels veranderen: controleer altijd de gelinkte bron. ⚠️ = onzeker / alleen secundaire bron. Laatst gecontroleerd: 13 okt 2026.<br><a href="index.html">Start</a> · <a href="https://github.com/RvWest67/zuid-afrika-zimbabwe-2027">broncode</a></footer></body></html>
