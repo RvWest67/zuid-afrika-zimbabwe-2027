@@ -1,9 +1,9 @@
 /* Service worker Kruger & Victoria Falls planner – offline gebruik (zelfde aanpak als Ieperboog-site). */
-const VERSION = 'c48a839c8c';
+const VERSION = '0c25b60fa4';
 const PAGES = 'safari-pages-' + VERSION;
 const TILES = 'safari-tiles';
 const MAX_TILES = 500;
-const FILES = ["./", "index.html", "periode.html", "route.html", "kaart.html", "accommodatie.html", "activiteiten.html", "praktisch.html", "checklist.html", "manifest.webmanifest", "icon.svg", "icon-maskable.svg", "vendor/leaflet/leaflet.js", "vendor/leaflet/leaflet.css"];
+const FILES = ["./", "index.html", "periode.html", "route.html", "kaart.html", "accommodatie.html", "activiteiten.html", "praktisch.html", "checklist.html", "begroting.html", "manifest.webmanifest", "icon.svg", "icon-maskable.svg", "vendor/leaflet/leaflet.js", "vendor/leaflet/leaflet.css"];
 
 self.addEventListener('install', ev => {
   ev.waitUntil(caches.open(PAGES).then(c => c.addAll(FILES.map(u => new Request(u, {cache: 'reload'})))).then(() => self.skipWaiting()));
