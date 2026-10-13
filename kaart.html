@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kaart · Kruger & Victoria Falls planner</title><meta name="description" content="Generieke Nederlandstalige reisplanner voor Kruger, Panorama Route en Victoria Falls (juni–september).">
+<meta name="theme-color" content="#3d2b14"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="vendor/leaflet/leaflet.css"><style>
+:root{--bg:#fffdf7;--ink:#2b2b2b;--accent:#b5651d;--bar:#3d2b14;--poppy:#e8590c}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--bar);color:#fff;padding:calc(22px + env(safe-area-inset-top)) 18px 26px;text-align:center;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,#6b5a3e 0 14px,#3b3222 14px 18px)}
+.poppy{width:64px;height:64px;display:block;margin:0 auto 8px}
+h1{margin:0;font-size:25px;line-height:1.15;letter-spacing:.01em}
+h1 span{color:#ffb4a8}
+.sub{margin:6px 0 0;font-size:14.5px;opacity:.88}
+main{max-width:560px;margin:0 auto;padding:18px 14px 8px}
+.intro{font-size:14.5px;line-height:1.5;margin:0 2px 16px;color:#444}
+.card{display:flex;gap:14px;align-items:center;text-decoration:none;color:inherit;background:#fff;border:1.5px solid #e4d9c6;border-left:6px solid var(--accent);border-radius:14px;padding:16px 14px;margin:0 0 14px;box-shadow:0 2px 8px rgba(59,50,34,.10);min-height:92px;transition:transform .12s,box-shadow .12s}
+a.card:active{transform:scale(.985)}
+a.card:hover{box-shadow:0 4px 14px rgba(59,50,34,.2)}
+a.card:focus-visible{outline:3px solid var(--poppy);outline-offset:2px}
+.card .ic{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;background:#f3e6d6}
+.card.sim{border-left-color:var(--poppy)} .card.sim .ic{background:#fde4e1}
+.card.tl{border-left-color:#7048e8} .card.tl .ic{background:#ece5fd}
+.card.vh{border-left-color:#2b8a3e} .card.vh .ic{background:#e3f4e6}
+.card.bg{border-left-color:#1c7ed6} .card.bg .ic{background:#e7f1fb}
+.card.rt{border-left-color:#2f9e44} .card.rt .ic{background:#d3f9d8}
+.card.pk{border-left-color:#f08c00} .card.pk .ic{background:#fff4e6}
+.card.prog{border-left-color:#1c7ed6} .card.prog .ic{background:#e7f5ff}
+.card h2{margin:0 0 4px;font-size:18px;color:var(--bar)}
+.card p{margin:0;font-size:13.5px;line-height:1.4;color:#555}
+.card .go{margin-left:auto;font-size:22px;color:var(--accent);flex:0 0 auto}
+.card.soon{opacity:.55;border-left-color:#aaa;box-shadow:none;background:#f5f2ec;cursor:default}
+.card.soon .ic{background:#e6e2da;filter:grayscale(1)}
+.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:#ddd;color:#555;border-radius:8px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+blockquote{margin:6px 4px 14px;padding:10px 14px;border-left:3px solid var(--poppy);background:#fbf5ee;font-style:italic;font-size:13.5px;line-height:1.45;color:#4a3f2c}
+blockquote cite{display:block;font-style:normal;font-size:11.5px;color:#777;margin-top:4px}
+.offl{margin:4px 0 14px;background:#fff;border:1px solid #e4d9c6;border-left:5px solid #495057;border-radius:12px;padding:11px 14px;font-size:14px;line-height:1.5}
+.offl h2{margin:0 0 4px;font-size:17px;color:var(--bar)}
+.offl p{margin:5px 0}
+.obtn{display:inline-block;background:var(--bar);color:#fff;border:0;border-radius:18px;padding:9px 15px;font-size:14px;font-weight:700;cursor:pointer;margin:4px 0}
+.obtn:disabled{opacity:.6;cursor:default}
+#offstat{font-size:13px;color:#2b8a3e;font-weight:600;min-height:1.2em}
+#offstat.err{color:#a51111}
+.otip{font-size:13px;background:#fff9db;border-radius:9px;padding:7px 10px}
+.offl details{margin-top:8px;border-top:1px solid #eee;padding-top:6px}
+.offl summary{font-weight:700;cursor:pointer;color:var(--bar)}
+.offl ol{margin:4px 0;padding-left:20px;font-size:13.5px}
+.offl h3{font-size:14px;margin:8px 0 2px}
+.card.wjd{border-left-color:#e67700} .card.wjd .ic{background:#fff0db}
+.share{margin:4px 0 14px;background:#fff;border:1px solid #e4d9c6;border-left:5px solid #e67700;border-radius:12px;padding:11px 14px;font-size:14px;line-height:1.5}
+.share h2{margin:0 0 6px;font-size:17px;color:var(--bar)}
+.shrow{display:flex;gap:14px;align-items:center}
+.qrb{flex:0 0 auto;border:0;padding:6px;background:#fff;border-radius:10px;box-shadow:0 1px 5px rgba(59,50,34,.18);cursor:zoom-in;line-height:0}
+.qrb img{width:112px;height:112px;display:block;image-rendering:pixelated}
+.shtx p{margin:0 0 6px;font-size:13.5px;color:#555}
+.url{font-size:12.5px;word-break:break-all;color:var(--accent);font-weight:600}
+#shstat{font-size:13px;color:#2b8a3e;font-weight:600;min-height:1.2em}
+#shstat.err{color:#a51111}
+#qrov{position:fixed;inset:0;z-index:100;background:rgba(30,24,15,.85);display:none;align-items:center;justify-content:center;flex-direction:column;padding:18px;cursor:zoom-out}
+#qrov.show{display:flex}
+#qrov img{width:min(86vw,72vh,520px);height:auto;background:#fff;padding:14px;border-radius:14px;image-rendering:pixelated}
+#qrov p{color:#fff;font-size:15px;text-align:center;margin:12px 0 0}
+footer{max-width:560px;margin:0 auto;padding:6px 16px calc(22px + env(safe-area-inset-bottom));font-size:12px;color:#6b6b6b;line-height:1.5;text-align:center}
+footer a{color:var(--accent)}
+@media(min-width:700px){h1{font-size:30px}header{padding-top:34px;padding-bottom:34px}}
+@media (prefers-reduced-motion: reduce){.card{transition:none}}
+
+.page h2{font-size:19px;color:var(--bar);margin:22px 0 8px;border-bottom:2px solid #f0e2cc;padding-bottom:4px}
+.page h3{font-size:16px;margin:14px 0 6px;color:var(--bar)}
+.page p,.page li{font-size:14.5px;line-height:1.55}
+.page ul{padding-left:20px}
+.box{background:#fff;border:1px solid #e4d9c6;border-left:5px solid var(--accent);border-radius:12px;padding:10px 14px;margin:10px 0}
+.box.warn{border-left-color:#f08c00;background:#fff9ed}.box.ok{border-left-color:#2b8a3e;background:#f1faf3}
+.src{font-size:11.5px;color:var(--accent);text-decoration:none;white-space:nowrap}
+.tw{overflow-x:auto;margin:8px 0}table{border-collapse:collapse;font-size:13px;min-width:100%}
+th,td{border:1px solid #e4d9c6;padding:6px 7px;text-align:left;vertical-align:top}th{background:#f6ecdc}
+.top{position:sticky;top:0;z-index:500;background:var(--bar);color:#fff;display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top)) 12px 10px}
+.top a{color:#fff;text-decoration:none;font-size:22px;line-height:1}.top b{font-size:16px}
+.day{display:flex;gap:10px;margin:6px 0;font-size:14px;line-height:1.45}.day .d{flex:0 0 64px;font-weight:700;color:var(--accent)}
+.ck label{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;line-height:1.45;margin:7px 0}.ck input{width:20px;height:20px;flex:0 0 20px;margin-top:1px}
+</style><!--pwa-->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Safari ZA·ZW 2027"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>#offtoast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));z-index:2000;max-width:min(92vw,520px);background:#212529;color:#fff;font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;border-radius:12px;padding:9px 34px 9px 12px;box-shadow:0 3px 12px rgba(0,0,0,.35)}#offtoast button{position:absolute;right:6px;top:5px;background:none;border:0;color:#fff;font-size:18px;cursor:pointer}</style>
+<script>
+(function(){
+  if('serviceWorker' in navigator && (location.protocol==='https:'||/^(localhost|127\.0\.0\.1)$/.test(location.hostname))) addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  function toast(on){ let t=document.getElementById('offtoast');
+    if(!on){ if(t) t.remove(); return; } if(t||!document.body) return;
+    t=document.createElement('div'); t.id='offtoast'; t.setAttribute('role','status');
+    t.innerHTML='📴 <b>Offline</b>: je bekijkt de bewaarde versie.'+(document.getElementById('map')||window.L?' Kaarttegels die je eerder bekeek, blijven zichtbaar; nieuwe gebieden hebben internet nodig.':'')+'<button type="button" aria-label="Sluiten">×</button>';
+    t.querySelector('button').onclick=()=>t.remove(); document.body.appendChild(t); }
+  addEventListener('offline',()=>toast(true)); addEventListener('online',()=>toast(false));
+  document.addEventListener('DOMContentLoaded',()=>{ if(navigator.onLine===false) toast(true); });
+})();
+</script>
+<!--/pwa--></head><body><div class="top"><a href="index.html" aria-label="Terug">‹</a><b>🗺️ Kaart</b></div><div id="map" style="height:calc(100vh - 52px);height:calc(100dvh - 52px)"></div>
+<script src="vendor/leaflet/leaflet.js"></script><script>
+const S=[["Johannesburg (JNB)", -26.1337, 28.242, "route", "Aankomst/vertrek"], ["Graskop", -24.93, 30.841, "route", "Basis Panorama Route"], ["Hoedspruit", -24.3546, 30.9566, "route", "Stadje bij Kruger, vliegveld HDS"], ["Satara rest camp", -24.393, 31.778, "camps", "SANParks, centraal Kruger"], ["Skukuza rest camp", -24.9964, 31.5922, "camps", "SANParks, grootste camp, vliegveld SZK"], ["Lower Sabie rest camp", -25.1197, 31.915, "camps", "SANParks, aan de Sabie-rivier"], ["Olifants rest camp", -24.006, 31.7393, "camps", "SANParks, uitzicht over rivier"], ["Berg-en-Dal rest camp", -25.43, 31.45, "camps", "SANParks, zuiden \u26a0\ufe0f ligging bij benadering"], ["Sabi Sand Game Reserve", -24.86, 31.38, "lodges", "Private reserves \u2013 lodges \u26a0\ufe0f ligging bij benadering"], ["Timbavati / Klaserie", -24.3, 31.3, "lodges", "Private reserves bij Hoedspruit \u26a0\ufe0f bij benadering"], ["Kruger Mpumalanga Int. (MQP)", -25.3832, 31.1056, "route", "Vliegveld"], ["God's Window", -24.8742, 30.8908, "view", "Uitzichtpunt (MTPA)"], ["Bourke's Luck Potholes", -24.6744, 30.8094, "view", "MTPA, wandelpaden"], ["Three Rondavels", -24.575, 30.81, "view", "Blyde River Canyon \u26a0\ufe0f bij benadering"], ["Victoria Falls (VFA)", -18.0959, 25.839, "route", "Vliegveld"], ["Victoria Falls Rainforest", -17.9243, 25.8572, "vf", "Regenwoudwandeling, ingang ZimParks"], ["Devil's Pool / Livingstone Island", -17.924, 25.853, "vf", "Alleen via Zambia \u26a0\ufe0f bij benadering"], ["Zambezi (sunset cruises)", -17.9, 25.82, "vf", "Boten boven de valls \u26a0\ufe0f bij benadering"], ["Kasane / Chobe (Botswana)", -17.818, 25.15, "vf", "Optionele dagtrip"]],R=[[-26.136937, 28.232213], [-26.148549, 28.223354], [-26.17138, 28.232325], [-26.181655, 28.311048], [-26.162894, 28.362268], [-26.163075, 28.513177], [-26.109175, 28.611856], [-26.066297, 28.789786], [-26.019349, 28.89661], [-26.022411, 29.050793], [-25.994534, 29.14152], [-25.962091, 29.195058], [-25.944117, 29.200298], [-25.895668, 29.255719], [-25.878237, 29.289047], [-25.875662, 29.346749], [-25.834394, 29.426294], [-25.828661, 29.541978], [-25.816088, 29.598682], [-25.838915, 29.720145], [-25.828463, 29.759613], [-25.831336, 29.808969], [-25.817341, 29.885716], [-25.766482, 29.958455], [-25.757908, 29.99267], [-25.730647, 30.020442], [-25.713748, 30.06094], [-25.733974, 30.111986], [-25.7261, 30.141665], [-25.712072, 30.153637], [-25.708507, 30.183923], [-25.66902, 30.239002], [-25.617259, 30.265676], [-25.59667, 30.29221], [-25.580689, 30.291503], [-25.484111, 30.374716], [-25.440952, 30.432594], [-25.435882, 30.472893], [-25.385522, 30.527585], [-25.392951, 30.606258], [-25.429622, 30.635475], [-25.45707, 30.679905], [-25.459489, 30.695572], [-25.432779, 30.738668], [-25.393154, 30.721075], [-25.383173, 30.701425], [-25.379965, 30.718192], [-25.345271, 30.72169], [-25.343936, 30.74144], [-25.296166, 30.767832], [-25.274996, 30.76012], [-25.156096, 30.770661], [-25.141328, 30.766067], [-25.148601, 30.756416], [-25.13655, 30.762104], [-25.126201, 30.752149], [-25.110029, 30.769288], [-25.113278, 30.776902], [-25.087861, 30.77896], [-25.059176, 30.816793], [-25.003853, 30.82274], [-24.97034, 30.805053], [-24.963589, 30.813498], [-24.926874, 30.809986], [-24.930003, 30.841739], [-24.930003, 30.841739], [-24.94409, 30.839908], [-24.965386, 30.852919], [-24.96087, 30.862676], [-24.963344, 30.878708], [-24.957999, 30.881897], [-24.95637, 30.906038], [-24.9485, 30.919301], [-24.952597, 30.932306], [-24.948675, 30.959269], [-24.953532, 30.971865], [-24.943272, 30.992622], [-24.940939, 31.009882], [-24.915137, 31.022692], [-24.912198, 31.034381], [-24.895023, 31.04853], [-24.871214, 31.046883], [-24.846536, 31.055627], [-24.8446, 31.064174], [-24.83064, 31.070155], [-24.831728, 31.082099], [-24.821844, 31.087592], [-24.786633, 31.078795], [-24.780111, 31.054363], [-24.771262, 31.043336], [-24.754812, 31.041959], [-24.730446, 31.018106], [-24.711503, 31.027692], [-24.670023, 31.024685], [-24.666835, 31.043479], [-24.658286, 31.046885], [-24.649929, 31.041884], [-24.607926, 31.037925], [-24.597437, 31.046653], [-24.576327, 31.036306], [-24.54646, 31.038697], [-24.536586, 31.029318], [-24.502335, 31.03372], [-24.462994, 31.028715], [-24.422741, 31.010038], [-24.348987, 30.954344], [-24.352869, 30.951308], [-24.354785, 30.957055], [-24.354785, 30.957055], [-24.352869, 30.951308], [-24.348987, 30.954344], [-24.422741, 31.010038], [-24.461648, 31.02834], [-24.502335, 31.03372], [-24.536586, 31.029318], [-24.54663, 31.038745], [-24.575561, 31.036191], [-24.599951, 31.046484], [-24.593906, 31.058851], [-24.598597, 31.070413], [-24.578794, 31.121737], [-24.562718, 31.144912], [-24.559835, 31.173931], [-24.553357, 31.187444], [-24.556914, 31.211938], [-24.553862, 31.331232], [-24.54374, 31.36933], [-24.537746, 31.374854], [-24.475839, 31.390788], [-24.46749, 31.454405], [-24.446554, 31.468119], [-24.440225, 31.478424], [-24.440579, 31.488714], [-24.407662, 31.531839], [-24.404905, 31.55186], [-24.410291, 31.569313], [-24.386707, 31.617038], [-24.387363, 31.653167], [-24.394226, 31.676746], [-24.390947, 31.693286], [-24.39481, 31.711238], [-24.389116, 31.726709], [-24.401236, 31.75393], [-24.40562, 31.786187], [-24.395633, 31.785606], [-24.393013, 31.778184], [-24.393013, 31.778184], [-24.398922, 31.786975], [-24.415752, 31.782353], [-24.451467, 31.789915], [-24.50889, 31.764119], [-24.542839, 31.766645], [-24.576207, 31.78341], [-24.639752, 31.800701], [-24.654494, 31.794436], [-24.670978, 31.797864], [-24.686141, 31.815002], [-24.699876, 31.81628], [-24.711438, 31.828492], [-24.749084, 31.850267], [-24.757334, 31.873537], [-24.778116, 31.870682], [-24.786097, 31.859692], [-24.793197, 31.86513], [-24.824334, 31.839799], [-24.847939, 31.800939], [-24.879288, 31.766038], [-24.888603, 31.745454], [-24.899748, 31.737304], [-24.901955, 31.724006], [-24.916629, 31.706857], [-24.929942, 31.700913], [-24.953639, 31.651511], [-24.963174, 31.64133], [-24.963581, 31.626367], [-24.976496, 31.624516], [-24.983906, 31.601891], [-24.992447, 31.60176], [-24.994478, 31.610551], [-25.002866, 31.604217], [-25.004048, 31.594569], [-24.996361, 31.591992], [-24.996361, 31.591992], [-25.004048, 31.594569], [-25.003788, 31.602308], [-24.998187, 31.609603], [-24.991792, 31.610171], [-24.991039, 31.616725], [-24.985157, 31.626128], [-24.975162, 31.659793], [-24.976478, 31.667805], [-24.971873, 31.669836], [-24.965917, 31.679465], [-24.966509, 31.684649], [-24.964765, 31.695451], [-24.966577, 31.700234], [-24.959925, 31.713975], [-24.956574, 31.71772], [-24.955593, 31.721429], [-24.956343, 31.72496], [-24.963769, 31.738121], [-24.966857, 31.748061], [-24.971882, 31.753728], [-24.976904, 31.766864], [-24.992566, 31.766798], [-24.996329, 31.768316], [-24.999681, 31.770393], [-25.005896, 31.777555], [-25.01449, 31.782398], [-25.020739, 31.782777], [-25.03316, 31.796992], [-25.041327, 31.802737], [-25.051021, 31.800401], [-25.061969, 31.804929], [-25.06683, 31.811792], [-25.066463, 31.815476], [-25.068164, 31.820795], [-25.06646, 31.82477], [-25.06664, 31.829094], [-25.073625, 31.846669], [-25.076969, 31.860265], [-25.100188, 31.882276], [-25.102398, 31.895022], [-25.105755, 31.90189], [-25.116898, 31.912991], [-25.120027, 31.91393], [-25.119697, 31.915003], [-25.119697, 31.915003], [-25.105755, 31.90189], [-25.100188, 31.882276], [-25.076969, 31.860265], [-25.06664, 31.829094], [-25.06683, 31.811792], [-25.061969, 31.804929], [-25.051021, 31.800401], [-25.041327, 31.802737], [-25.020739, 31.782777], [-25.01449, 31.782398], [-25.005896, 31.777555], [-24.996329, 31.768316], [-24.977269, 31.767129], [-24.971811, 31.753585], [-24.965829, 31.745958], [-24.955593, 31.721429], [-24.966577, 31.700234], [-24.964765, 31.695451], [-24.965861, 31.679659], [-24.971873, 31.669836], [-24.976478, 31.667805], [-24.975103, 31.660094], [-24.980174, 31.640903], [-24.991039, 31.616725], [-24.991792, 31.610171], [-24.998187, 31.609603], [-25.004114, 31.600661], [-25.003298, 31.592666], [-24.990113, 31.576298], [-24.992829, 31.565663], [-24.993746, 31.548771], [-24.991746, 31.538342], [-24.994496, 31.52514], [-24.989759, 31.499995], [-24.977002, 31.47801], [-24.974241, 31.460737], [-24.958311, 31.444065], [-24.956551, 31.432983], [-24.95987, 31.421377], [-24.937703, 31.411254], [-24.924434, 31.413812], [-24.899626, 31.391708], [-24.87341, 31.377138], [-24.871653, 31.370375], [-24.865325, 31.373757], [-24.866109, 31.375662], [-24.866109, 31.375662], [-24.859665, 31.355885], [-24.870665, 31.329506], [-24.890484, 31.333509], [-24.905504, 31.328156], [-24.919387, 31.308345], [-24.923528, 31.309957], [-24.923558, 31.304075], [-24.934106, 31.299424], [-24.946943, 31.310413], [-24.961335, 31.308585], [-24.970019, 31.25763], [-24.993204, 31.24122], [-25.006879, 31.222831], [-25.03184, 31.212796], [-25.027974, 31.169007], [-25.043036, 31.128549], [-25.088679, 31.130179], [-25.111369, 31.137421], [-25.1361, 31.135456], [-25.167618, 31.112329], [-25.19012, 31.112731], [-25.202995, 31.101402], [-25.219089, 31.099994], [-25.223767, 31.083584], [-25.259632, 31.073391], [-25.268928, 31.062063], [-25.291149, 31.05378], [-25.299954, 31.044943], [-25.308996, 31.058731], [-25.326573, 31.069519], [-25.371228, 31.075988], [-25.378261, 31.082065], [-25.379772, 31.101639]];
+const m=L.map('map').setView([-22,29],5);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap · route: OSRM'}).addTo(m);
+const col={route:'#e8590c',camps:'#2b8a3e',lodges:'#7048e8',view:'#1c7ed6',vf:'#0b7285'};
+const G={route:L.layerGroup(),camps:L.layerGroup(),lodges:L.layerGroup(),view:L.layerGroup(),vf:L.layerGroup()};
+L.polyline(R,{color:'#e8590c',weight:4}).addTo(G.route);
+L.polyline([[-25.3832,31.1056],[-18.0959,25.8390]],{color:'#e8590c',weight:3,dashArray:'6 8'}).bindPopup('Vlucht MQP → VFA').addTo(G.route);
+L.polyline([[-26.1337,28.2420],[-18.0959,25.8390]],{color:'#868e96',weight:2,dashArray:'4 8'}).bindPopup('Terugvlucht VFA → JNB').addTo(G.route);
+S.forEach(s=>L.circleMarker([s[1],s[2]],{radius:8,color:'#fff',weight:2,fillColor:col[s[3]],fillOpacity:1}).bindPopup('<b>'+s[0]+'</b><br>'+s[4]).addTo(G[s[3]]));
+Object.values(G).forEach(g=>g.addTo(m));
+L.control.layers(null,{'Route & vliegvelden':G.route,'SANParks rest camps':G.camps,'Private reserves (lodges)':G.lodges,'Uitzichtpunten Panorama':G.view,'Victoria Falls activiteiten':G.vf},{collapsed:false}).addTo(m);
+m.fitBounds(L.latLngBounds(S.map(s=>[s[1],s[2]])),{padding:[20,20]});
+</script></body></html>

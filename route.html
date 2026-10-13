@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Voorstel-route 21 dagen · Kruger & Victoria Falls planner</title><meta name="description" content="Generieke Nederlandstalige reisplanner voor Kruger, Panorama Route en Victoria Falls (juni–september).">
+<meta name="theme-color" content="#3d2b14"><link rel="icon" href="icon.svg"><style>
+:root{--bg:#fffdf7;--ink:#2b2b2b;--accent:#b5651d;--bar:#3d2b14;--poppy:#e8590c}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--bar);color:#fff;padding:calc(22px + env(safe-area-inset-top)) 18px 26px;text-align:center;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,#6b5a3e 0 14px,#3b3222 14px 18px)}
+.poppy{width:64px;height:64px;display:block;margin:0 auto 8px}
+h1{margin:0;font-size:25px;line-height:1.15;letter-spacing:.01em}
+h1 span{color:#ffb4a8}
+.sub{margin:6px 0 0;font-size:14.5px;opacity:.88}
+main{max-width:560px;margin:0 auto;padding:18px 14px 8px}
+.intro{font-size:14.5px;line-height:1.5;margin:0 2px 16px;color:#444}
+.card{display:flex;gap:14px;align-items:center;text-decoration:none;color:inherit;background:#fff;border:1.5px solid #e4d9c6;border-left:6px solid var(--accent);border-radius:14px;padding:16px 14px;margin:0 0 14px;box-shadow:0 2px 8px rgba(59,50,34,.10);min-height:92px;transition:transform .12s,box-shadow .12s}
+a.card:active{transform:scale(.985)}
+a.card:hover{box-shadow:0 4px 14px rgba(59,50,34,.2)}
+a.card:focus-visible{outline:3px solid var(--poppy);outline-offset:2px}
+.card .ic{flex:0 0 52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;background:#f3e6d6}
+.card.sim{border-left-color:var(--poppy)} .card.sim .ic{background:#fde4e1}
+.card.tl{border-left-color:#7048e8} .card.tl .ic{background:#ece5fd}
+.card.vh{border-left-color:#2b8a3e} .card.vh .ic{background:#e3f4e6}
+.card.bg{border-left-color:#1c7ed6} .card.bg .ic{background:#e7f1fb}
+.card.rt{border-left-color:#2f9e44} .card.rt .ic{background:#d3f9d8}
+.card.pk{border-left-color:#f08c00} .card.pk .ic{background:#fff4e6}
+.card.prog{border-left-color:#1c7ed6} .card.prog .ic{background:#e7f5ff}
+.card h2{margin:0 0 4px;font-size:18px;color:var(--bar)}
+.card p{margin:0;font-size:13.5px;line-height:1.4;color:#555}
+.card .go{margin-left:auto;font-size:22px;color:var(--accent);flex:0 0 auto}
+.card.soon{opacity:.55;border-left-color:#aaa;box-shadow:none;background:#f5f2ec;cursor:default}
+.card.soon .ic{background:#e6e2da;filter:grayscale(1)}
+.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:#ddd;color:#555;border-radius:8px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+blockquote{margin:6px 4px 14px;padding:10px 14px;border-left:3px solid var(--poppy);background:#fbf5ee;font-style:italic;font-size:13.5px;line-height:1.45;color:#4a3f2c}
+blockquote cite{display:block;font-style:normal;font-size:11.5px;color:#777;margin-top:4px}
+.offl{margin:4px 0 14px;background:#fff;border:1px solid #e4d9c6;border-left:5px solid #495057;border-radius:12px;padding:11px 14px;font-size:14px;line-height:1.5}
+.offl h2{margin:0 0 4px;font-size:17px;color:var(--bar)}
+.offl p{margin:5px 0}
+.obtn{display:inline-block;background:var(--bar);color:#fff;border:0;border-radius:18px;padding:9px 15px;font-size:14px;font-weight:700;cursor:pointer;margin:4px 0}
+.obtn:disabled{opacity:.6;cursor:default}
+#offstat{font-size:13px;color:#2b8a3e;font-weight:600;min-height:1.2em}
+#offstat.err{color:#a51111}
+.otip{font-size:13px;background:#fff9db;border-radius:9px;padding:7px 10px}
+.offl details{margin-top:8px;border-top:1px solid #eee;padding-top:6px}
+.offl summary{font-weight:700;cursor:pointer;color:var(--bar)}
+.offl ol{margin:4px 0;padding-left:20px;font-size:13.5px}
+.offl h3{font-size:14px;margin:8px 0 2px}
+.card.wjd{border-left-color:#e67700} .card.wjd .ic{background:#fff0db}
+.share{margin:4px 0 14px;background:#fff;border:1px solid #e4d9c6;border-left:5px solid #e67700;border-radius:12px;padding:11px 14px;font-size:14px;line-height:1.5}
+.share h2{margin:0 0 6px;font-size:17px;color:var(--bar)}
+.shrow{display:flex;gap:14px;align-items:center}
+.qrb{flex:0 0 auto;border:0;padding:6px;background:#fff;border-radius:10px;box-shadow:0 1px 5px rgba(59,50,34,.18);cursor:zoom-in;line-height:0}
+.qrb img{width:112px;height:112px;display:block;image-rendering:pixelated}
+.shtx p{margin:0 0 6px;font-size:13.5px;color:#555}
+.url{font-size:12.5px;word-break:break-all;color:var(--accent);font-weight:600}
+#shstat{font-size:13px;color:#2b8a3e;font-weight:600;min-height:1.2em}
+#shstat.err{color:#a51111}
+#qrov{position:fixed;inset:0;z-index:100;background:rgba(30,24,15,.85);display:none;align-items:center;justify-content:center;flex-direction:column;padding:18px;cursor:zoom-out}
+#qrov.show{display:flex}
+#qrov img{width:min(86vw,72vh,520px);height:auto;background:#fff;padding:14px;border-radius:14px;image-rendering:pixelated}
+#qrov p{color:#fff;font-size:15px;text-align:center;margin:12px 0 0}
+footer{max-width:560px;margin:0 auto;padding:6px 16px calc(22px + env(safe-area-inset-bottom));font-size:12px;color:#6b6b6b;line-height:1.5;text-align:center}
+footer a{color:var(--accent)}
+@media(min-width:700px){h1{font-size:30px}header{padding-top:34px;padding-bottom:34px}}
+@media (prefers-reduced-motion: reduce){.card{transition:none}}
+
+.page h2{font-size:19px;color:var(--bar);margin:22px 0 8px;border-bottom:2px solid #f0e2cc;padding-bottom:4px}
+.page h3{font-size:16px;margin:14px 0 6px;color:var(--bar)}
+.page p,.page li{font-size:14.5px;line-height:1.55}
+.page ul{padding-left:20px}
+.box{background:#fff;border:1px solid #e4d9c6;border-left:5px solid var(--accent);border-radius:12px;padding:10px 14px;margin:10px 0}
+.box.warn{border-left-color:#f08c00;background:#fff9ed}.box.ok{border-left-color:#2b8a3e;background:#f1faf3}
+.src{font-size:11.5px;color:var(--accent);text-decoration:none;white-space:nowrap}
+.tw{overflow-x:auto;margin:8px 0}table{border-collapse:collapse;font-size:13px;min-width:100%}
+th,td{border:1px solid #e4d9c6;padding:6px 7px;text-align:left;vertical-align:top}th{background:#f6ecdc}
+.top{position:sticky;top:0;z-index:500;background:var(--bar);color:#fff;display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top)) 12px 10px}
+.top a{color:#fff;text-decoration:none;font-size:22px;line-height:1}.top b{font-size:16px}
+.day{display:flex;gap:10px;margin:6px 0;font-size:14px;line-height:1.45}.day .d{flex:0 0 64px;font-weight:700;color:var(--accent)}
+.ck label{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;line-height:1.45;margin:7px 0}.ck input{width:20px;height:20px;flex:0 0 20px;margin-top:1px}
+</style><!--pwa-->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Safari ZA·ZW 2027"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>#offtoast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));z-index:2000;max-width:min(92vw,520px);background:#212529;color:#fff;font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;border-radius:12px;padding:9px 34px 9px 12px;box-shadow:0 3px 12px rgba(0,0,0,.35)}#offtoast button{position:absolute;right:6px;top:5px;background:none;border:0;color:#fff;font-size:18px;cursor:pointer}</style>
+<script>
+(function(){
+  if('serviceWorker' in navigator && (location.protocol==='https:'||/^(localhost|127\.0\.0\.1)$/.test(location.hostname))) addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  function toast(on){ let t=document.getElementById('offtoast');
+    if(!on){ if(t) t.remove(); return; } if(t||!document.body) return;
+    t=document.createElement('div'); t.id='offtoast'; t.setAttribute('role','status');
+    t.innerHTML='📴 <b>Offline</b>: je bekijkt de bewaarde versie.'+(document.getElementById('map')||window.L?' Kaarttegels die je eerder bekeek, blijven zichtbaar; nieuwe gebieden hebben internet nodig.':'')+'<button type="button" aria-label="Sluiten">×</button>';
+    t.querySelector('button').onclick=()=>t.remove(); document.body.appendChild(t); }
+  addEventListener('offline',()=>toast(true)); addEventListener('online',()=>toast(false));
+  document.addEventListener('DOMContentLoaded',()=>{ if(navigator.onLine===false) toast(true); });
+})();
+</script>
+<!--/pwa--></head><body><div class="top"><a href="index.html" aria-label="Terug naar start">‹</a><b>🛣️ Voorstel-route 21 dagen</b></div><main class="page">
+<div class="box"><b>Basisroute (A): self-drive + 1 privaat reservaat.</b> 19 nachten + nachtvlucht terug. Afstanden/rijtijden: OSRM <a class="src" href="https://project-osrm.org/" target="_blank" rel="noopener">[OSRM]</a> – ⚠️ houdt geen rekening met snelheidslimieten in Kruger (max. 50 km/u asfalt / 40 km/u grind), wildstops en poorttijden; reken in het park ruim extra.</div>
+<h2>Dag voor dag (A)</h2>
+<div class="day"><div class="d">Dag 1</div><div>Vlucht AMS → Johannesburg (JNB). KLM KL591 vliegt dagelijks direct, ±10u45 (okt 2026: 10:35–21:20) <a class="src" href="https://www.flightstats.com/v2/flight-tracker/KL/591" target="_blank" rel="noopener">[bron]</a> ⚠️ dienstregeling 2027 nog niet bekend. Overnachten bij het vliegveld.</div></div>
+<div class="day"><div class="d">Dag 2</div><div>Huurauto, rit JNB → Graskop (Panorama Route): 381 km · ±4u49. Rustige tussenstop onderweg (bijv. Dullstroom).</div></div>
+<div class="day"><div class="d">Dag 3–4</div><div>Panorama Route: God’s Window, Lisbon/Berlin Falls, Bourke’s Luck Potholes, Three Rondavels (Blyde River Canyon). Zie <a href="activiteiten.html">activiteiten</a>.</div></div>
+<div class="day"><div class="d">Dag 5</div><div>Graskop → Hoedspruit via de canyon: 104 km · ±1u45. 2 nachten (bijv. guesthouse, reptielen-/rehab-centrum, Blyde-boottocht ⚠️).</div></div>
+<div class="day"><div class="d">Dag 7</div><div>Hoedspruit → Kruger via Orpen Gate → Satara (centraal): 123 km · ±2u36. 3 nachten.</div></div>
+<div class="day"><div class="d">Dag 10</div><div>Satara → Skukuza: 94 km · ±2u23. 2 nachten (of Lower Sabie: Skukuza→Lower Sabie 46 km · ±1u10).</div></div>
+<div class="day"><div class="d">Dag 12</div><div>Lower Sabie/Skukuza 1 nacht extra, dan dag 13 naar private reserve Sabi Sand: 78 km · ±1u51. 3 nachten all-inclusive met game drives &amp; begeleide wandeling.</div></div>
+<div class="day"><div class="d">Dag 16</div><div>Naar Kruger Mpumalanga Airport (MQP): 87 km · ±1u55, auto inleveren. Vlucht MQP → Victoria Falls (VFA): Airlink 4Z476 direct, ±1u50 (2026: 11:35–13:25) <a class="src" href="https://www.flight.info/4Z476" target="_blank" rel="noopener">[bron]</a>; Airlink vliegt ook vanaf Skukuza (SZK) en Hoedspruit (HDS) <a class="src" href="https://www.flyairlink.com/en-za/flights-from-skukuza-to-victoria-falls" target="_blank" rel="noopener">[SZK]</a> <a class="src" href="https://www.flyairlink.com/en-za/flights-from-hoedspruit-to-victoria-falls" target="_blank" rel="noopener">[HDS]</a>. ⚠️ Schema 2027 checken.</div></div>
+<div class="day"><div class="d">Dag 16–20</div><div>4 nachten Victoria Falls (Zimbabwe): regenwoudwandeling, sunset cruise, helikopter, Devil’s Pool (Zambia, aug/sep), optioneel Chobe-dagtrip (Botswana).</div></div>
+<div class="day"><div class="d">Dag 20–21</div><div>VFA → JNB → AMS (nachtvlucht), aankomst dag 21/22.</div></div>
+<h3>Totale rijafstand A</h3><p>±913 km over 7 ritten volgens OSRM (exclusief game drives in het park).</p>
+<h2>Alternatief B – watervallen eerst</h2><p>JNB → VFA (Airlink/andere) → 4 nachten Vic Falls → vlucht naar MQP/HDS/SZK → private reserve → Kruger → Panorama Route → terug naar JNB (±4u45 rijden <a class="src" href="https://project-osrm.org/" target="_blank" rel="noopener">[OSRM]</a>). Voordeel: de lange rit naar JNB pas aan het eind, Devil’s Pool-kans groter als je pas eind augustus bij de valls bent – kies dan wel B met valls laat in de reis.</p>
+<h2>Alternatief C – minder rijden, meer begeleid</h2><p>Vlieg JNB → Hoedspruit (HDS). Basis in Hoedspruit/omgeving + 3–4 nachten private reserve (bijv. Timbavati/Klaserie/Sabi Sand), dagtour Panorama Route met gids, dan HDS → VFA <a class="src" href="https://www.flyairlink.com/en-za/flights-from-hoedspruit-to-victoria-falls" target="_blank" rel="noopener">[bron]</a>. Geen lange autoritten; duurder per nacht. Goed als zelf rijden of lange zitdagen tegenvallen.</p>
+<div class="box warn">⚠️ Vluchttijden en prijzen zijn indicatief (gevonden via webzoektocht, okt 2026). Airlink-pagina’s toonden vanaf-prijzen ±R4.933 (MQP→VFA) en ±R6.540 (HDS→VFA) <a class="src" href="https://www.flyairlink.com/en-za/flights-from-nelspruit-to-victoria-falls" target="_blank" rel="noopener">[bron]</a> <a class="src" href="https://www.flyairlink.com/en-za/flights-from-hoedspruit-to-victoria-falls" target="_blank" rel="noopener">[bron]</a> – sterk datum-afhankelijk.</div></main><footer>Generieke reisplanner, geen boekingssite. Prijzen en regels veranderen: controleer altijd de gelinkte bron. ⚠️ = onzeker / alleen secundaire bron. Laatst gecontroleerd: 13 okt 2026.<br><a href="index.html">Start</a> · <a href="https://github.com/RvWest67/zuid-afrika-zimbabwe-2027">broncode</a></footer></body></html>
